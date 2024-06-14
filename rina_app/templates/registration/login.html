@@ -1,0 +1,85 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>SIOS</title>
+    <link rel="icon" href="{% static 'rina_app/img/login/favicon.ico' %}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'rina_app/css/login.css' %}">
+</head>
+
+<body>
+    <div class="container-fluid full-height">
+        <div class="row h-100">
+            <div class="col-md-6 d-none d-md-block left-column bg-g-petro text-white">
+                <div class="top">
+                    <img src="{% static 'rina_app/img/login/petro-logo.png' %}" class="mt-2" id="brandImg" alt="">
+                </div>
+                <div class="middle d-flex align-items-center justify-content-center">
+                    <div>
+                        <h2 class="text-center">Sistema Integrado para <br>Ordens de Serviço</h2>
+                        <p class="text-center">SIOS</p>
+                        <p>ⓘ Por favor, realize o Login para acesso ao sistema</p>
+                    </div>
+                </div>
+                <div class="bottom d-flex align-items-end justify-content-center">
+                    <p>Sistema desenvolvido pela célula de arquitetura de banco de dados - MIS @2024</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 d-flex align-items-start justify-content-center bg-light pt-5">
+
+                <div class="col-8">
+                    <h2 class="d-md-none text-center">Sistema Integrado para Ordens de Serviço - SIOS</h2>
+                    <div class="d-flex justify-content-center" id="secondaryBrand">
+                        <img class="mt-0" src="{% static 'rina_app/img/login/petro-logo2.png' %}">
+                    </div>
+
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        {% if form.errors %}
+                            <p class="text-warning"> Usuário ou senha incorretos. Por favor, tente novamente.</p>
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="email">Email Petrobras</label>
+                            {{ form.username|add_class:'form-control' }}
+                            <!-- <input type="text" class="form-control" id="email" placeholder="@petrobras.com.br"> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <!-- <input type="password" class="form-control" id="password" placeholder="Senha"> -->
+                            {{ form.password|add_class:'form-control' }}
+                        </div>
+                        <button type="submit" class="btn bg-g-petro text-white">Entrar</button>
+                        <input type="hidden" name="next" value="{{ next }}">
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{% load render_table from django_tables2 %}
+{% load crispy_forms_tags %}
+
+<div class="w-75 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="text-left col-6">
+          Lista de {{form_page_title}}
+        </div>
+        <div class="col-6 text-right">
+          <a href="#" id="filter-table-link" class="badge badge-primary mr-4">
+            Filtro
+            <i class="fa-solid fa-filter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      {% render_table table %}
+    </div>
+  </div>

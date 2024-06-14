@@ -1,0 +1,12 @@
+{
+
+"name": "PETROBRAS",
+
+"dataColors": [ "#008542", "#FDC82F", "#006298","#00B2A9","#A8B400","#FEDF00","#E17000","#675C53", "#004165","#7D9AAA"],
+
+"background":"#FFFFFF", 
+
+"foreground": "#008542", 
+
+"tableAccent":"#00B2A9" 
+}

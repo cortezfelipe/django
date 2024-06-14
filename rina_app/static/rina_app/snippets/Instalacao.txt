@@ -1,0 +1,1 @@
+Adicionar arquivos .code-snippets na pasta C:\Users\USERNAME\AppData\Roaming\Code\User\snippets

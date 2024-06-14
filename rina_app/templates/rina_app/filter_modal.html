@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+
+<div id="filter-modal" class="modal" tabindex="-1">
+  <form method="GET" id="form-modal-filter" action="">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Filtrar dados</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id='filter-modal-body-text'></p>
+          {% if filter_form %}
+          {% crispy filter_form %}
+          {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+          <input name="input" type="submit" value="Filtrar" class="btn btn-primary">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

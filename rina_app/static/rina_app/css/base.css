@@ -1,0 +1,160 @@
+html,
+body,
+main {
+  background-color: #edeeed;
+  font-family: 'Petrobras Sans';
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.navbar {
+  background-color: white;
+  max-height: 95px;
+  box-shadow: 0 3px 4px 0px rgba(84, 84, 84, 0.09);
+}
+
+.nav-item a {
+  color: #008542 !important;
+}
+
+.nav-item a:hover {
+  color: #01974c !important;
+}
+
+nav:has(.navbar-collapse.collapse.show),
+nav:has(.navbar-collapse.collapsing) {
+  max-height: none;
+}
+
+.input-group-append {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+#sidebar {
+  z-index: 3;
+  width: 250px;
+  transition: margin-left ease-in-out 0.3s;
+  position: fixed;
+}
+
+.highlight {
+  position: relative;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 100%;
+  background-color: yellow;
+}
+
+#brand-text {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+#logout-link {
+  font-size: large;
+  font-weight: bold;
+}
+
+#sidebar .list-group {
+  width: 250px;
+  background-color: #008542;
+  min-height: 100vh;
+}
+
+#sidebar i {
+  margin-right: 6px;
+}
+
+#sidebar .list-group-item {
+  background-color: #008542;
+  color: white;
+  border-left: 0;
+  border-right: 0;
+  border-color: white;
+  white-space: nowrap;
+}
+
+/* highlight active menu */
+#sidebar .list-group-item:hover,
+#sidebar .list:hover {
+  background-color: #01974c;
+  text-decoration: none;
+}
+
+/* closed state */
+#sidebar .list-group .list-group-item[aria-expanded="false"]::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 5px;
+}
+
+/* Conteudo que segue o menu aberto. Controlando a seta ">"*/
+#sidebar .list-group .list-group-item[aria-expanded="true"]::after {
+  content: "\f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 5px;
+}
+
+/* level 1*/
+#sidebar .list-group .collapse .list-group-item,
+#sidebar .list-group .collapsing .list-group-item {
+  padding-left: 2em;
+}
+
+/* level 2*/
+#sidebar .list-group .collapse>.collapse .list-group-item,
+#sidebar .list-group .collapse>.collapsing .list-group-item {
+  padding-left: 3em;
+}
+
+/* level 3*/
+#sidebar .list-group .collapse>.collapse>.collapse .list-group-item {
+  padding-left: 4em;
+}
+
+#sidebar.collapsed {
+  margin-left: -250px;
+
+}
+
+#sidebarToggle {
+  position: fixed;
+}
+
+#content {
+  margin-left: 250px;
+  transition: 0.3s ease-in-out;
+
+}
+
+#content.sidebar-hidden {
+  margin-left: 0;
+}
+
+.badge-primary {
+  background-color: #006298 !important;
+}
+
+table a {
+  color: #006298 !important;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: none;
+}

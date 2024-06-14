@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+#brandImg {
+    height: 5vh;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-g-petro {
+    background-color: #008542;
+}
+
+.top {
+    height: 10vh;
+    /* border: 5px solid red; */
+}
+
+.middle {
+    height: 80vh;
+    /* border: 5px solid blue; */
+}
+
+.bottom {
+    height: 10vh;
+    /* border: 5px solid yellow; */
+}
+
+form button {
+    width: 100%;
+}
+
+#secondaryBrand {
+    height: 50vh;
+}
+
+#secondaryBrand img {
+
+    height: 90%;
+}
